@@ -1,0 +1,117 @@
+.menu{
+    text-align: end;
+    padding-right: 20px;
+    margin-top: 30px;
+}
+
+.navbar{
+    height: 100vh;
+    overflow-y: auto;
+    /* width: 25%; */
+}
+
+.logo{
+    text-align: start;
+    padding-left: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.logo:hover{
+    cursor: pointer;
+}
+
+.logo span{
+    color: rgb(241, 241, 11);
+}
+.nav{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    color: gray;
+    font-size: 13px;
+    font-weight: lighter;
+    text-align: justify;
+}
+
+.nav-items.active{
+    background-color: 	#0e1111;
+    color: white;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+
+.nav-items:hover{
+    background-color: 	#0e1111;
+    color: white;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+
+.nav-title p{
+    color: gray;
+    font-size: 10px;
+    font-weight: lighter;
+}
+
+.user{
+    border-top: 5px solid rgba(174, 233, 233, 0.254);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.user .photo-name{
+    display: flex;
+    justify-content: space-between;
+}
+.user .photo-name h3{
+    font-size: 15px;
+    color: gray;
+    font-weight: light;
+    padding-left: 10px;
+}
+
+.user .photo-name img{
+    width: 50px;
+    border-radius: 40px;
+}
+
+.user .icon{
+    display: flex;
+    align-items: center;
+
+}
+
+
+
+.logout-btn{
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    outline: 2px solid red;
+    background-color: white;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.text-red{
+    color: red;
+}
+
+.logout-btn:hover{
+    cursor: pointer;
+    color: red;
+}
+
+
+
+
+
+
+
+@media screen and (max-width:900px) {
+    .navbar{
+        display: none;
+    }
+}

@@ -1,0 +1,170 @@
+
+
+.music-section{
+    padding: 20px;
+    /* width: 50%; */
+    height: 100vh;
+    /* background: linear-gradient(transparent, rgba(0,0,0,1)); */
+    background-color: rgba(174, 233, 233, 0.254);
+    overflow: auto;
+}
+
+.head{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px;
+}
+
+.head .icons{
+    display: flex;
+    gap: 30px;
+    color: gray;
+    align-items: center;
+    height: 40px;
+    cursor: pointer;
+}
+
+
+.head .search{
+    display: flex;
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+    padding-right: 40%;
+}
+
+.head .search input{
+    border: none;
+    outline: none;
+}
+.head .search .icon{
+    padding-right: 20px;
+    font-size: 15px;
+}
+
+.head .search .icon:hover{
+    cursor: pointer;
+}
+
+.hot{
+    text-align: start;
+    color: gray;
+    font-size: 10px;
+    font-weight: light;
+    margin: 0px;
+}
+
+.divide{
+    display: flex;
+    justify-content: space-between;
+}
+.divide h2{
+    font-size: 15px;
+}
+
+.wallpaper-container{
+    width: 100%;
+    
+    margin-bottom: 10px;
+}
+
+.wallpaper-container img{
+    width: 80%;
+    height: 250px;
+    border-radius: 20px;
+    /* z-index: -1; */
+    
+}
+
+
+
+.wallpaper-container .content button{
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-right: 5px;
+}
+
+.wallpaper-container .content .play{
+    background-color: black;
+    color: white;
+}
+
+
+
+
+.playlist{
+    max-height: 30vh;
+}
+
+.music-list{
+    color: gray;
+    text-transform: uppercase;
+    overflow-y: auto; 
+}
+
+.music-list .headings{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 10px;
+}
+
+.music-list .music{
+   
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 10px;
+    /* overflow-x: hidden; */
+    text-align: center;
+}
+
+.music-list .active{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.music:hover{
+    cursor: pointer;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+
+.music-list .music p img{
+    height: 3rem;
+    width: 3rem;
+ 
+    margin-right: 5px;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width:900px) {
+    section{
+        margin: 0px;
+        padding: 0px;
+    }
+
+    
+    .music-section{
+        width: 100vw;
+        padding: 20px;
+       
+    }
+
+    .head .search{
+       
+        padding: 5px;
+       
+    }
+}
+
+
+
+
