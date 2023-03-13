@@ -7,11 +7,12 @@ import { CiSearch } from "react-icons/ci";
 import { MdArrowForwardIos } from 'react-icons/md';
 
 import Myplaylist from './Myplaylist';
-// import Player from './Player';
+
 
 import Player from 'react-material-music-player' // default export
 
 import { Track, PlayerInterface } from 'react-material-music-player'
+
 
 export default function Layout() {
 
@@ -59,12 +60,13 @@ export default function Layout() {
         <div className="music-list">
 
           <Myplaylist />
-              
+          
         </div>
 
       <div className="player">
-      {/* <Player accessToken={accessToken} trackUri={playingTrack?.uri} /> */}
-      <Player/>
+      
+      <Player className="playerComponent"/>
+    
       </div>
 
 

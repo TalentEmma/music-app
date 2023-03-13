@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import styled from "styled-components";
-import { PlayerInterface } from 'react-material-music-player';
+// import styled from "styled-components";
+// import { PlayerInterface } from 'react-material-music-player';
 
 
 
@@ -13,25 +13,17 @@ export default function Myplaylist() {
     const [tracks, setTracks] = useState({})  
   
     //https://api.spotify.com/v1/me/playlists
-
-
-
+    // https://api.spotify.com/v1/users/me/playlists
 
     useEffect(() => {
-
         const getPlaylist = async () => {
-            const res = await axios.get(`https://api.spotify.com/v1/users/${accessToken.id}/playlists`, {
+              const res = await axios.get("https://api.spotify.com/v1/users/me/playlists", {
                 headers: {
-                    Authorization: `Bearer ${accessToken}`,
-                    'Content-Type': 'application/json'
+                  'Content-Type': 'application/json',
+                  Authorization: `Bearer ${accessToken}` 
                 }
-            }).catch((err) => {
-              console.log(err);
             })
-              
-            
-          
-
+ 
             // console.log(res.data);
 
             if (res.data !== "") {
@@ -70,12 +62,17 @@ export default function Myplaylist() {
            
         } 
 
+        getPlaylist();
+
         const getTrackList = async () => {
+         
           const trackRes = await axios.get(`${songs.track}`, {
           headers: {
               Authorization: `Bearer ${accessToken}`,
               'Content-Type': 'application/json'
           }
+          }).catch((err) => {
+            console.log(err);
           });
 
           console.log(trackRes)
@@ -117,12 +114,12 @@ export default function Myplaylist() {
 
     
 
-        getPlaylist();
+       
         getTrackList();
       
 
 
-    }, [accessToken, songs, tracks]);
+    },[accessToken, songs, tracks]);
 
 
 
