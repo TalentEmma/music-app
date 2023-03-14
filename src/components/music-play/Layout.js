@@ -59,7 +59,8 @@ export default function Layout() {
 
         <div className="wallpaper-container">
             {/* <img src="https://cdn.pixabay.com/photo/2016/03/28/09/36/music-1285165_960_720.jpg" alt="" /> */}
-            <img src={currentPlaylist.image} alt="laylist Image Here" />
+              {currentPlaylist.img} ? <img src={currentPlaylist.image} alt="laylist Image Here" /> : <img src="https://cdn.pixabay.com/photo/2016/03/28/09/36/music-1285165_960_720.jpg" alt="" />
+       
         </div>
 
         <div className="divide">
