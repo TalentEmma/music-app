@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 
 const AUTH_URL =
-  "https://accounts.spotify.com/authorize?client_id=dd61fac0155843e5809773ebbf895380&response_type=token&redirect_uri=http://localhost:3000/&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state"
+  "https://accounts.spotify.com/authorize?client_id=d6ecba1484ef4ff7834daab60088bef2&response_type=token&redirect_uri=https://music-app-eta-one.vercel.app/&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state"
 
 //   console.log(token)
 
