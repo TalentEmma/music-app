@@ -11,13 +11,22 @@ import Myplaylist from './Myplaylist';
 
 import Player from 'react-material-music-player' // default export
 
-import { Track, PlayerInterface } from 'react-material-music-player'
+import { createTheme } from '@mui/material/styles';
+import { green, purple } from '@mui/material/colors';
+
+const myPlayerStyle = {
+ 
+  width: '80vw',
+  padding: '0px 5px'
+ // CSS CODE
+ };
 
 
 export default function Layout() {
 
   const accessToken = window.localStorage.getItem("token");
-  const [playingTrack, setPlayingTrack] = useState()
+  const currentPlaylist =localStorage.getItem("songs")
+
   return (
    <div> 
     
@@ -49,7 +58,8 @@ export default function Layout() {
         </div>
 
         <div className="wallpaper-container">
-            <img src="https://cdn.pixabay.com/photo/2016/03/28/09/36/music-1285165_960_720.jpg" alt="" />
+            {/* <img src="https://cdn.pixabay.com/photo/2016/03/28/09/36/music-1285165_960_720.jpg" alt="" /> */}
+            <img src={currentPlaylist.image} alt="laylist Image Here" />
         </div>
 
         <div className="divide">
@@ -65,7 +75,7 @@ export default function Layout() {
 
       <div className="player">
       
-      <Player className="playerComponent"/>
+      <Player style ={myPlayerStyle}/>
     
       </div>
 
@@ -74,4 +84,5 @@ export default function Layout() {
     </div> 
   )
 }
+
 

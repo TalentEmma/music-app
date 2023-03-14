@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 // import styled from "styled-components";
-// import { PlayerInterface } from 'react-material-music-player';
+import { Track, PlayerInterface } from 'react-material-music-player';
 
 
 
@@ -100,7 +100,7 @@ export default function Myplaylist() {
 
             setTracks(selectedTrack)
             localStorage.setItem('selectedTrack', JSON.stringify(selectedTrack))
-            console.log(tracks)
+            // console.log(tracks.item[2])
           }
           else
           {
@@ -128,30 +128,59 @@ export default function Myplaylist() {
     // console.log(tracks)
 
     // const renderSongs = () => {
-    //     return  songs.item?.map((song, index)=> (
-    //             <div key={song.id} onClick={(e) => {
-    //               e.preventDefault();
-                  
-    //               console.log(song.id)
+    //   return  songs.item?.map((song, index)=> (
+    //           <div key={song.id} onClick={(e) => {
+    //             e.preventDefault();
+                
+    //             console.log(song.id)
 
-                 
-    //               console.log(song.id)
+               
+    //             console.log(song.id)
 
-    //               setTrackId(song.id? song : null, index)
-    //               console.log(trackId)
+    //             setTrackId(song.id? song : null, index)
+    //             console.log(trackId)
 
-                  
-    //               // styled.addClassName("active");
-    //             }} className="music">
-    //                     <p>{index +1}</p>
-    //                     <p><img src={song.image} alt="" /></p>
-    //                     <p>{song.artists}</p>
-    //                     <p>{song.name}</p>
-                        
-    //             </div>
-    //       ))
+                
+    //             // styled.addClassName("active");
+    //           }} className="music">
+    //                   <p>{index +1}</p>
+    //                   <p><img src={song.image} alt="" /></p>
+    //                   <p>{song.artists}</p>
+    //                   <p>{song.name}</p>
+                      
+    //           </div>
+    //     ))
+      
+    // }
+    // console.log(tracks.item[0].title);
+    
+    const renderSongs = () => {
+      // const tracks = (localStorage.getItem('selectedTrack'))
+      return  tracks.item?.map((track, index)=> (
+              <div key={track.id}
+               onClick={() => {
         
-    //   }
+                PlayerInterface.play([
+                  new Track (
+                    track.id, // unique ID used in shuffling and sorting
+                    track.image,
+                    track.title,
+                    track.artist, 
+                    track.url, // url to music file
+                  ),
+                ]);
+              }} 
+              className="music">
+                      <p>{index +1} <img src={track.image} alt="" /> </p>
+                      <p>{track.title}</p>
+                      <p>{track.artists}</p>
+                      <p>{track.duration}</p>
+                      <p>{track.album}</p>
+                      
+              </div>
+        ))
+      
+    }
  
 
 
@@ -164,16 +193,16 @@ export default function Myplaylist() {
          <div>
         <div className="headings">
                 <p>#</p>
-                <p>image</p>
+                <p>Title</p>
                 <p>Artist</p>
-              
+                <p>Duration</p>
                 <p>Album</p>
             </div>
 
                 
-              {/* {
+              {
                 renderSongs()
-              } */}
+              }
 
             
 
