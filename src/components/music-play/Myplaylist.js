@@ -30,14 +30,7 @@ export default function Myplaylist() {
 
                 const Playing = 
                 {
-                //   item: res.data.items.map(playlist => ({
-                //         id: playlist.id,
-                //         name: playlist.name,
-                //         artists: playlist.owner.display_name ? playlist.owner.display_name : "",
-                //         image: playlist.images[0].url,
-                //         track: playlist.tracks.href ? playlist.tracks.href : null,
-
-                // })),
+   
 
                 
                   id: res.data.items[0].id,
@@ -88,7 +81,7 @@ export default function Myplaylist() {
                     title: item.track.name,
                     artist: item.track.artists[0].name,
                     album: item.track.album.name,
-                    duration: item.track.duration_ms / 1000,
+                    duration: item.track.duration_ms / 60000,
                     image: item.track.album.images[0].url,
                     uri: item.track.uri,
                     url:item.track.preview_url,
@@ -123,36 +116,6 @@ export default function Myplaylist() {
 
 
 
-
-    // const tracks = (localStorage.getItem('songs'))
-    // console.log(tracks)
-
-    // const renderSongs = () => {
-    //   return  songs.item?.map((song, index)=> (
-    //           <div key={song.id} onClick={(e) => {
-    //             e.preventDefault();
-                
-    //             console.log(song.id)
-
-               
-    //             console.log(song.id)
-
-    //             setTrackId(song.id? song : null, index)
-    //             console.log(trackId)
-
-                
-    //             // styled.addClassName("active");
-    //           }} className="music">
-    //                   <p>{index +1}</p>
-    //                   <p><img src={song.image} alt="" /></p>
-    //                   <p>{song.artists}</p>
-    //                   <p>{song.name}</p>
-                      
-    //           </div>
-    //     ))
-      
-    // }
-    // console.log(tracks.item[0].title);
     
     const renderSongs = () => {
       // const tracks = (localStorage.getItem('selectedTrack'))
@@ -174,7 +137,7 @@ export default function Myplaylist() {
                       <p>{index +1} <img src={track.image} alt="" /> </p>
                       <p>{track.title}</p>
                       <p>{track.artists}</p>
-                      <p>{track.duration}</p>
+                      <p>{track.duration}m</p>
                       <p>{track.album}</p>
                       
               </div>
